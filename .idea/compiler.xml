@@ -10,6 +10,7 @@
         <module name="pojo" />
         <module name="server" />
         <module name="client" />
+        <module name="common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -1,0 +1,4 @@
+com\client\mapper\TestMapper.class
+com\configuration\MysqlDateSource.class
+com\client\controller\ProviderController.class
+com\HyronClientApplication.class
