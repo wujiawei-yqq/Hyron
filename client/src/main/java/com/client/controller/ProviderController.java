@@ -1,28 +1,32 @@
 package com.client.controller;
 
-import com.client.mapper.TestMapper;
+import com.client.mapper.LianjiaMapper;
+import com.pojo.lianjiaDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import tk.mybatis.mapper.entity.Example;
+
+import java.util.List;
 
 @Controller
-@RequestMapping("/t")
+@RequestMapping("/linajia")
 public class ProviderController {
 
     @Autowired
-    private TestMapper testMapper;
+    private LianjiaMapper lianjiaMapper;
 
-    @RequestMapping(value = "/db")
-    public String selectName(@RequestParam int Id) {
-        return testMapper.selectName(Id);
-    }
-
-    @GetMapping("/index")
-    public String index(Model model){
-        model.addAttribute("ss","东方嘉盛分类考试了");
-        return "Hello"; //当浏览器输入/index时，会返回 /templates/home.html页面
+    @GetMapping("/gulou")
+    public String selectName(Model model) {
+        Example example = new Example(lianjiaDao.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("id", 1);
+        List<lianjiaDao> lianjiaList = lianjiaMapper.selectByExample(example);
+        model.addAttribute("id", lianjiaList.get(0).getId());
+        model.addAttribute("areaname", lianjiaList.get(0).getAreaname());
+        model.addAttribute("urlchar", lianjiaList.get(0).getUrlchar());
+        return "lianjia";
     }
 }
