@@ -11,6 +11,7 @@
         <module name="server" />
         <module name="client" />
         <module name="common" />
+        <module name="bokeadmin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

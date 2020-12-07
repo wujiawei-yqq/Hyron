@@ -11,6 +11,7 @@
     <module>client</module>
     <module>pojo</module>
     <module>common</module>
+      <module>bokeadmin</module>
   </modules>
   <packaging>pom</packaging>
 
