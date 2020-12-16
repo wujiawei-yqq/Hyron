@@ -1,4 +1,8 @@
-com\client\mapper\TestMapper.class
+com\configuration\Swagerr2configuration.class
+com\client\mapper\LianjiaMapper.class
 com\configuration\MysqlDateSource.class
+com\client\service\SerivceImp.class
+META-INF\spring-configuration-metadata.json
 com\client\controller\ProviderController.class
+com\configuration\CommonMapper.class
 com\HyronClientApplication.class

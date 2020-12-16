@@ -1,10 +1,17 @@
 package com.baomidou.ant.admin.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.baomidou.ant.admin.entity.UserInfo;
+import com.baomidou.ant.admin.service.IUserInfoService;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import entity.Result;
+import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
-import 你自己的父类控制器,没有就不用设置!;
+import java.util.List;
+
 
 /**
  * <p>
@@ -16,6 +23,17 @@ import 你自己的父类控制器,没有就不用设置!;
  */
 @RestController
 @RequestMapping("/admin/user-info")
-public class UserInfoController extends 你自己的父类控制器,没有就不用设置! {
+public class UserInfoController{
+    @Autowired
+    IUserInfoService iUserInfoService;
 
+    @GetMapping("/list/{page}/{limit}")
+    public Result listPage(@ApiParam("当前页码") @PathVariable Long page,
+                           @ApiParam("每页记录数") @PathVariable Long limit){
+        Page<UserInfo> pageParm = new Page<>(page,limit);
+        IPage<UserInfo> pageModel = iUserInfoService.page(pageParm);
+        List<UserInfo> records = pageModel.getRecords();
+        long total = pageModel.getTotal();
+        return Result.ok().data("total",total).data("rows",records);
+    }
 }

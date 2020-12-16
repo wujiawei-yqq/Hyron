@@ -1,0 +1,14 @@
+com\baomidou\ant\admin\mapper\PageInfoMapper.class
+com\baomidou\ant\admin\controller\UserInfoController.class
+com\baomidou\ant\admin\controller\PageInfoController.class
+com\baomidou\ant\admin\service\IPageInfoService.class
+com\baomidou\ant\admin\mapper\UserInfoMapper.class
+com\baomidou\ant\configuration\CommonMapper.class
+com\baomidou\ant\BokeApplication.class
+com\baomidou\ant\admin\service\impl\UserInfoServiceImpl.class
+com\baomidou\ant\admin\service\impl\PageInfoServiceImpl.class
+com\baomidou\ant\configuration\Swagerr2configuration.class
+com\baomidou\ant\admin\entity\UserInfo.class
+com\baomidou\ant\admin\service\IUserInfoService.class
+com\baomidou\ant\configuration\MysqlDateSource.class
+com\baomidou\ant\admin\entity\PageInfo.class
